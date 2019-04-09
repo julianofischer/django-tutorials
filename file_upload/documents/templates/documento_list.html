@@ -1,0 +1,8 @@
+<h1>Documentos</h1>
+<ul>
+{% for doc in object_list %}
+    <li>{{ doc.titulo }} - <a href="{{ doc.upload.url }}"> link</a></li>
+{% empty %}
+    <li>Nenhum documento cadastrado.</li>
+{% endfor %}
+</ul>
