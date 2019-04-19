@@ -2,12 +2,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {%  load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
-  <title>Album example · Bootstrap</title>
+  <title>Portfolio</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -36,16 +37,15 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Juliano Naves</a>
+      <a class="navbar-brand" href="{% url 'home' %}">Juliano Naves</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link" href="#">Blog</a>
-          <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-item nav-link" href="http://twitter.com/">Twitter</a>
+          <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -60,6 +60,7 @@
         <p>
           <a href="mailto:juliano.naves@ifro.edu.br" class="btn btn-primary my-2">Envie-me um e-mail</a>
         </p>
+        <img src="{% static 'juliano.png' %}"
       </div>
     </section>
 
