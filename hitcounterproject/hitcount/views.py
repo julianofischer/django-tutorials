@@ -8,6 +8,9 @@ def index(request, pk):
     h = monitored.hitcount.all()[0]
     #counting the hit
     #todo: use sessions
-    h.hits = h.hits + 1
-    h.save()
+    visited = request.session.get(str(monitored.pk), False)
+    if not visited:
+        request.session[monitored.pk] = True
+        h.hits = h.hits + 1
+        h.save()
     return HttpResponse(f'{pk} {monitored.hitcount.first()}')
